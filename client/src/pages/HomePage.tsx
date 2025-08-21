@@ -122,200 +122,262 @@ const MOCK_PROPERTIES = [
 
 const HomePage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'feed'>('grid');
-  
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative w-full h-screen max-h-[700px] bg-gradient-to-br from-slate-900 to-slate-800 overflow-hidden">
-        {/* Background Image with Overlay */}
+      <section className="relative w-full h-[80vh] bg-white overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1800&q=80" 
-            alt="Luxury waterfront property" 
-            className="w-full h-full object-cover object-center scale-105 motion-safe:animate-[pulse_15s_ease-in-out_infinite]"
+          <img
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80"
+            alt="Modern luxury apartment interior"
+            className="w-full h-full object-cover object-center"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/80"></div>
+          <div className="absolute inset-0 bg-slate-900/60"></div>
         </div>
-        
+
         {/* Content Container */}
-        <div className="relative z-10 w-full h-full flex items-center justify-center">
+        <div className="relative z-10 w-full h-full flex items-center justify-center py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto text-center">
               {/* Logo Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 animate-fade-in border border-white/10">
-                <span className="text-white/90 font-semibold">Rentas</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span className="text-white/70 text-sm">Verified Direct Listings</span>
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-8 border border-white/20">
+                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-white">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                  </svg>
+                </div>
+                <span className="text-white font-display font-bold text-lg">LagosSpaces</span>
               </div>
-              
-              {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-6 animate-fade-in">
-                Find Your Home,<br />
-                <span className="text-emerald-400">Direct from Owners</span>
+
+              {/* Main Content */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
+                Find Your Perfect Home
+                <br />
+                <span className="text-orange-400">Direct from Owners</span>
               </h1>
-              
-              {/* Subheading */}
-              <p className="text-lg md:text-xl text-white/80 max-w-xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                Rent direct, save big—property owners list for free and connect instantly with verified tenants, while renters find trusted homes without agent fees.
+
+              <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Connect directly with verified property owners in Lagos. Skip the middleman, save on fees, and find your perfect home faster.
               </p>
-              
-              {/* Benefits Badges */}
-              <div className="flex flex-wrap gap-3 justify-center mt-8 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 border border-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-emerald-400">
-                    <path fillRule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-white text-sm font-medium">Verified Owners</span>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 border border-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-emerald-400">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
-                  </svg>
-                  <span className="text-white text-sm font-medium">No Agent Fees</span>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 border border-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-emerald-400">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>
-                  <span className="text-white text-sm font-medium">Secure Payments</span>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 border border-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-emerald-400">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="text-white text-sm font-medium">24/7 Support</span>
-                </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg rounded-xl shadow-lg transition-all duration-300 hover:scale-105">
+                  <span className="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                    </svg>
+                    Find Properties
+                  </span>
+                </button>
+
+                <button className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-bold text-lg rounded-xl border-2 border-slate-700 transition-all duration-300 hover:scale-105">
+                  <span className="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                    List Your Property
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
-      {/* Featured Properties */}
-      <section className="max-w-7xl mx-auto px-4 mb-16 mt-16">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-[rgb(var(--color-secondary-900))]">Explore Properties</h2>
-            <p className="text-[rgb(var(--color-secondary-500))]">Direct from verified property owners in Lagos</p>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-slate-900">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-display font-bold text-white mb-2">1000+</div>
+              <div className="text-slate-400 text-sm font-medium">Properties Listed</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-display font-bold text-white mb-2">500+</div>
+              <div className="text-slate-400 text-sm font-medium">Happy Tenants</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-display font-bold text-white mb-2">200+</div>
+              <div className="text-slate-400 text-sm font-medium">Verified Owners</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-display font-bold text-orange-400 mb-2">₦0</div>
+              <div className="text-slate-400 text-sm font-medium">Agent Fees</div>
+            </div>
           </div>
-          
-          {/* View Toggle */}
-          <div className="flex items-center gap-2 bg-white p-1 rounded-lg shadow-sm border border-[rgb(var(--color-secondary-100))]">
-            <button
-              onClick={() => setViewMode('grid')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                viewMode === 'grid' 
-                  ? 'bg-[rgb(var(--color-primary-100))] text-[rgb(var(--color-primary-800))]' 
-                  : 'hover:bg-[rgb(var(--color-secondary-50))] text-[rgb(var(--color-secondary-600))]'
-              }`}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
-              </svg>
-              Grid
-            </button>
-            <button
-              onClick={() => setViewMode('feed')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                viewMode === 'feed' 
-                  ? 'bg-[rgb(var(--color-primary-100))] text-[rgb(var(--color-primary-800))]' 
-                  : 'hover:bg-[rgb(var(--color-secondary-50))] text-[rgb(var(--color-secondary-600))]'
-              }`}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-              </svg>
-              Feed
-            </button>
-          </div>
-        </div>
-        
-        {viewMode === 'grid' ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {MOCK_PROPERTIES.map((property) => (
-              <PropertyCard key={property.id} {...property} />
-            ))}
-          </div>
-        ) : (
-          <div className="space-y-6">
-            {MOCK_PROPERTIES.map((property) => (
-              <div key={property.id} className="max-w-4xl mx-auto">
-                <PropertyCard {...property} />
-              </div>
-            ))}
-          </div>
-        )}
-        
-        <div className="mt-10 text-center">
-          <button className="btn-secondary px-6 py-3">
-            Load More Properties
-          </button>
         </div>
       </section>
-      
+
+      {/* Benefits Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">
+              Why Choose LagosSpaces?
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Experience a better way to find and rent properties in Lagos
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-white">
+                  <path fillRule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Verified Owners</h3>
+              <p className="text-slate-600">All property owners are verified for your safety and peace of mind.</p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-white">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Zero Agent Fees</h3>
+              <p className="text-slate-600">Connect directly with owners and save thousands on agent commissions.</p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-white">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">24/7 Support</h3>
+              <p className="text-slate-600">Round-the-clock customer support to help you every step of the way.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Properties */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-4">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-2">Explore Properties</h2>
+              <p className="text-slate-600">Direct from verified property owners in Lagos</p>
+            </div>
+
+            {/* View Toggle */}
+            <div className="flex items-center gap-2 bg-gray-100 p-1 rounded-xl">
+              <button
+                onClick={() => setViewMode('grid')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${viewMode === 'grid'
+                  ? 'bg-orange-500 text-white shadow-sm'
+                  : 'hover:bg-gray-200 text-slate-600'
+                  }`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+                </svg>
+                Grid
+              </button>
+              <button
+                onClick={() => setViewMode('feed')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${viewMode === 'feed'
+                  ? 'bg-orange-500 text-white shadow-sm'
+                  : 'hover:bg-gray-200 text-slate-600'
+                  }`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                </svg>
+                Feed
+              </button>
+            </div>
+          </div>
+
+          {viewMode === 'grid' ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {MOCK_PROPERTIES.map((property) => (
+                <PropertyCard key={property.id} {...property} />
+              ))}
+            </div>
+          ) : (
+            <div className="space-y-6">
+              {MOCK_PROPERTIES.map((property) => (
+                <div key={property.id} className="max-w-4xl mx-auto">
+                  <PropertyCard {...property} />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Call to Action */}
-      <section className="bg-gradient-to-br from-[rgb(var(--color-accent-600))] to-[rgb(var(--color-accent-700))] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4">Are you a Property Owner?</h2>
-          <p className="max-w-2xl mx-auto mb-8 text-[rgb(var(--color-accent-100))]">
-            List your property on Rentas and connect directly with verified tenants. No more dealing with agents or payment delays.
+      <section className="py-16 bg-slate-900">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">Are you a Property Owner?</h2>
+          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+            List your property on LagosSpaces and connect directly with verified tenants. No more dealing with agents or payment delays.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn bg-white text-[rgb(var(--color-accent-700))] hover:bg-[rgb(var(--color-accent-50))] px-8 py-3">
+            <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg rounded-xl shadow-lg transition-all duration-300 hover:scale-105">
               Post Your Property
             </button>
-            <button className="btn bg-transparent border border-white text-white hover:bg-white/10 px-8 py-3">
+            <button className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold text-lg rounded-xl transition-all duration-300 hover:scale-105">
               Learn About Verification
             </button>
           </div>
         </div>
       </section>
-      
-      {/* New How It Works Section */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-[rgb(var(--color-secondary-900))] mb-4">How Rentas Works</h2>
-          <p className="text-[rgb(var(--color-secondary-500))] max-w-2xl mx-auto">
-            Our platform connects verified landlords with serious tenants, eliminating middlemen and reducing costs.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-xl shadow-md p-6 border border-[rgb(var(--color-secondary-100))]">
-            <div className="w-12 h-12 bg-[rgb(var(--color-primary-100))] rounded-full flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-[rgb(var(--color-primary-600))]">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-[rgb(var(--color-secondary-900))] mb-2">1. Verified Identities</h3>
-            <p className="text-[rgb(var(--color-secondary-600))]">
-              Both landlords and tenants undergo ID verification with government-issued documents to ensure security and trust.
+
+      {/* How It Works Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-4">How LagosSpaces Works</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Our platform connects verified landlords with serious tenants, eliminating middlemen and reducing costs.
             </p>
           </div>
-          
-          <div className="bg-white rounded-xl shadow-md p-6 border border-[rgb(var(--color-secondary-100))]">
-            <div className="w-12 h-12 bg-[rgb(var(--color-primary-100))] rounded-full flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-[rgb(var(--color-primary-600))]">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-              </svg>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+              <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-white">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">1. Verified Identities</h3>
+              <p className="text-slate-600">
+                Both landlords and tenants undergo ID verification with government-issued documents to ensure security and trust.
+              </p>
             </div>
-            <h3 className="text-xl font-semibold text-[rgb(var(--color-secondary-900))] mb-2">2. Direct Communication</h3>
-            <p className="text-[rgb(var(--color-secondary-600))]">
-              Chat directly with property owners, schedule viewings, and negotiate terms without paying agent fees.
-            </p>
-          </div>
-          
-          <div className="bg-white rounded-xl shadow-md p-6 border border-[rgb(var(--color-secondary-100))]">
-            <div className="w-12 h-12 bg-[rgb(var(--color-primary-100))] rounded-full flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-[rgb(var(--color-primary-600))]">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
-              </svg>
+
+            <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-white">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">2. Direct Communication</h3>
+              <p className="text-slate-600">
+                Chat directly with property owners, schedule viewings, and negotiate terms without paying agent fees.
+              </p>
             </div>
-            <h3 className="text-xl font-semibold text-[rgb(var(--color-secondary-900))] mb-2">3. Secure Payments</h3>
-            <p className="text-[rgb(var(--color-secondary-600))]">
-              Small refundable booking fees to deter unserious inquiries and escrow system for rent deposits that protect both parties.
-            </p>
+
+            <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+              <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-white">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">3. Secure Payments</h3>
+              <p className="text-slate-600">
+                Small refundable booking fees to deter unserious inquiries and escrow system for rent deposits that protect both parties.
+              </p>
+            </div>
           </div>
         </div>
       </section>
