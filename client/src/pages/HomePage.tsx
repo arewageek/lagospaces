@@ -125,58 +125,67 @@ const HomePage = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative w-full h-[80vh] bg-white overflow-hidden">
-        {/* Background Image */}
+      {/* Enhanced Hero Section */}
+      <section className="relative w-full h-[85vh] bg-white overflow-hidden">
+        {/* Background Image with Enhanced Overlay */}
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80"
             alt="Modern luxury apartment interior"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center scale-105"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-slate-900/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-900/60 to-orange-900/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent"></div>
         </div>
+
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-orange-500/20 rounded-full blur-xl animate-pulse-slow"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
 
         {/* Content Container */}
         <div className="relative z-10 w-full h-full flex items-center justify-center py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              {/* Logo Badge */}
-              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-8 border border-white/20">
-                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-white">
+            <div className="max-w-5xl mx-auto text-center">
+              {/* Enhanced Logo Badge */}
+              <div className="inline-flex items-center gap-3 bg-white/15 backdrop-blur-xl px-8 py-4 rounded-2xl mb-10 border border-white/20 shadow-2xl">
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                   </svg>
                 </div>
-                <span className="text-white font-display font-bold text-lg">LagosSpaces</span>
+                <span className="text-white font-display font-bold text-xl">LagosSpaces</span>
+                <div className="px-3 py-1 bg-orange-500/90 text-white text-xs font-bold rounded-full">BETA</div>
               </div>
 
-              {/* Main Content */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
+              {/* Enhanced Main Content */}
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-display font-bold text-white leading-tight mb-8">
                 Find Your Perfect Home
                 <br />
-                <span className="text-orange-400">Direct from Owners</span>
+                <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">Direct from Owners</span>
               </h1>
 
-              <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Connect directly with verified property owners in Lagos. Skip the middleman, save on fees, and find your perfect home faster.
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
+                Connect directly with verified property owners in Lagos. Skip the middleman, save on fees, and find your perfect home faster than ever.
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg rounded-xl shadow-lg transition-all duration-300 hover:scale-105">
-                  <span className="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+              {/* Enhanced CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+                <button className="group px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold text-lg rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-orange-500/25">
+                  <span className="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 group-hover:scale-110 transition-transform">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                     </svg>
                     Find Properties
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 group-hover:translate-x-1 transition-transform">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
                   </span>
                 </button>
 
-                <button className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-bold text-lg rounded-xl border-2 border-slate-700 transition-all duration-300 hover:scale-105">
-                  <span className="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                <button className="group px-10 py-5 bg-white/10 hover:bg-white/20 text-white font-bold text-lg rounded-2xl border-2 border-white/30 hover:border-white/50 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+                  <span className="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 group-hover:scale-110 transition-transform">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
                     List Your Property
@@ -258,22 +267,41 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Featured Properties */}
-      <section className="py-16 bg-white">
+      {/* Simplified Explore Properties Section */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-4">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-2">Explore Properties</h2>
-              <p className="text-slate-600">Direct from verified property owners in Lagos</p>
+          {/* Simplified Header */}
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
+              Featured Properties
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Handpicked properties from verified owners across Lagos
+            </p>
+          </div>
+
+          {/* Simplified Controls */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-16 gap-6">
+            {/* Simple Filter Tabs */}
+            <div className="flex items-center gap-2">
+              <button className="px-5 py-2.5 bg-slate-900 text-white rounded-lg font-medium text-sm">
+                All
+              </button>
+              <button className="px-5 py-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg font-medium text-sm transition-colors">
+                Apartments
+              </button>
+              <button className="px-5 py-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg font-medium text-sm transition-colors">
+                Houses
+              </button>
             </div>
 
-            {/* View Toggle */}
-            <div className="flex items-center gap-2 bg-gray-100 p-1 rounded-xl">
+            {/* Simple View Toggle */}
+            <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg">
               <button
                 onClick={() => setViewMode('grid')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${viewMode === 'grid'
-                  ? 'bg-orange-500 text-white shadow-sm'
-                  : 'hover:bg-gray-200 text-slate-600'
+                className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${viewMode === 'grid'
+                  ? 'bg-white text-slate-900 shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
                   }`}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
@@ -283,34 +311,54 @@ const HomePage = () => {
               </button>
               <button
                 onClick={() => setViewMode('feed')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${viewMode === 'feed'
-                  ? 'bg-orange-500 text-white shadow-sm'
-                  : 'hover:bg-gray-200 text-slate-600'
+                className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${viewMode === 'feed'
+                  ? 'bg-white text-slate-900 shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
                   }`}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                 </svg>
-                Feed
+                List
               </button>
             </div>
           </div>
 
-          {viewMode === 'grid' ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {MOCK_PROPERTIES.map((property) => (
-                <PropertyCard key={property.id} {...property} />
-              ))}
-            </div>
-          ) : (
-            <div className="space-y-6">
-              {MOCK_PROPERTIES.map((property) => (
-                <div key={property.id} className="max-w-4xl mx-auto">
-                  <PropertyCard {...property} />
-                </div>
-              ))}
-            </div>
-          )}
+          {/* Properties Grid/List */}
+          <div className="relative">
+            {viewMode === 'grid' ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                {MOCK_PROPERTIES.map((property, index) => (
+                  <div
+                    key={property.id}
+                    className="animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <PropertyCard {...property} />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-10">
+                {MOCK_PROPERTIES.map((property, index) => (
+                  <div
+                    key={property.id}
+                    className="max-w-4xl mx-auto animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <PropertyCard {...property} />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Simple Load More */}
+          <div className="text-center mt-20">
+            <button className="px-8 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-lg transition-colors">
+              View All Properties
+            </button>
+          </div>
         </div>
       </section>
 
